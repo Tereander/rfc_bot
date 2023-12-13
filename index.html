@@ -3,17 +3,48 @@
 <head>
     <meta charset="utf-8">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color)
+        }
+
+        #main {
+            width: 100%;
+            padding: 20 px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 70px;
+            margin: 30px auto;
+        }
+    </style>
 </head>
 <body>
     <div id="main">
-        <h1>Онлайн магазин</h1>
-        <button id="buy">Купить</button>
+        <h1>Регистрация пользователей в системе</h1>
     </div>
     <form id="form">
-        <input type="text" placeholder="Имя" id="user_name">
-        <input type="text" placeholder="Имя" id="user_email">
-        <input type="text" placeholder="Имя" id="user_phone">
-        <button id="order">Оформить</button>
+        <input type="text" placeholder="Фамилия+имя" id="user_name">
+        <input type="text" placeholder="id уз телеграм" id="user_id">
+        <input type="text" placeholder="Подразделение" id="user_department">
+        <input type="text" placeholder="guid 1C" id="user_guid">
+        <input type="text" placeholder="Уровень доступа" id="user_access">
+        <button id="order">Регистрация</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -25,13 +56,17 @@
 
         order.addEventListener("click", () => {
             let name = document.getElementById("user_name").value;
-            let email = document.getElementById("user_email").value;
-            let phone = document.getElementById("user_phone").value;
+            let id = document.getElementById("user_id").value;
+            let department = document.getElementById("user_department").value;
+            let guid = document.getElementById("user_guid").value;
+            let access = document.getElementById("user_access").value;
 
             let data = {
                 name: name,
-                email: email,
-                phone: phone,
+                id: id,
+                department: department,
+                guid: guid,
+                access: access,
             }
 
             tg.sendData(JSON.stringify(data));
