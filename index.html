@@ -32,6 +32,48 @@
             width: 70px;
             margin: 30px auto;
         }
+
+        p {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
+        #form {
+
+            text-alight: center;
+        }
+
+        input {
+            wight: 90%;
+            outline: none;
+            margin 10px 5%;
+            padding: 15px 10px;
+            font-size: 14px;
+            border: 2px solid silver;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            border-color: #db5d5d;
+        }
     </style>
 </head>
 <body>
@@ -39,10 +81,10 @@
         <h1>Регистрация пользователей в системе</h1>
     </div>
     <form id="form">
-        <input type="text" placeholder="Фамилия+имя" id="user_name">
-        <input type="text" placeholder="id уз телеграм" id="user_id">
+        <input type="text" placeholder="Фамилия и имя" id="user_name">
+        <input type="text" placeholder="ID УЗ телеграм" id="user_id">
         <input type="text" placeholder="Подразделение" id="user_department">
-        <input type="text" placeholder="guid 1C" id="user_guid">
+        <input type="text" placeholder="Guid 1C" id="user_guid">
         <input type="text" placeholder="Уровень доступа" id="user_access">
         <button id="order">Регистрация</button>
     </form>
