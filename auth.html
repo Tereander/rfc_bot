@@ -71,21 +71,22 @@
         }
 
         input:focus {
-            border-color: #db5d5d;
+            border-color: #0000ff;
         }
 
     </style>
 </head>
 <body>
     <div id="main">
-        <h1>Регистрация пользователей в RFC Informer Bot</h1>
-        <h6>Для продолжения работы необходимо ввести данные от единой УЗ ИС 1С RFC </h6>
+        <h1>Регистрация пользователя в <p>RFC Informer Bot</h1>
+        <h4>Для продолжения работы необходимо ввести данные УЗ 1С RFC </h4>
     </div>
     <form id="form">
         <input type="text" placeholder="Имя пользователя" id="1с_user_name">
-        <input type="text" placeholder="Пароль" id="1с_password">
+        <input type="password" placeholder="Пароль" id="1с_password">
         <button id="order">Войти</button>
     </form>
+    <p>*если доступ к ИС 1С не был предоставлен, верификация в системе невозможна</p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
