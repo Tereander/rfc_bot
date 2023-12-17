@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 180;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        #main {
+            width: 100%;
+            padding: 20 px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 70px;
+            margin: 30px auto;
+        }
+
+        p {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
+        #form {
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            outline: none;
+            margin: 10px 5%;
+            padding: 15px 10px;
+            font-size: 14px;
+            border: 2px solid silver;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            border-color: #0000ff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Поиск пользователя в <p>RFC Informer Bot</h1>
+        <h4>Для продолжения работы необходимо ввести имя или id </h4>
+    </div>
+    <form id="form">
+        <input type="text" placeholder="Имя пользователя" id="1с_user_name">
+        <input type="password" placeholder="ID пользователя" id="1с_id">
+        <button id="order">Поиск</button>
+    </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById("buy");
+        let order = document.getElementById("order");
+        tg.expand();
+
+
+        order.addEventListener("click", () => {
+            let name = document.getElementById("1с_user_name").value;
+            let id = document.getElementById("1с_id").value;
+
+            let auth_1c = {
+                name: name,
+                id: id,
+            }
+
+            tg.sendData(JSON.stringify(auth_1c));
+
+            tg.close();
+        });
+    </script>
+</body>
+</html>
