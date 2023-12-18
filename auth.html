@@ -78,13 +78,15 @@
 </head>
 <body>
     <div id="main">
-        <h1>Поиск пользователя в <p>RFC Informer Bot</h1>
-        <h4>Для продолжения работы необходимо ввести id пользователя</h4>
+        <h1>Регистрация пользователя в <p>RFC Informer Bot</h1>
+        <h4>Для продолжения работы необходимо ввести данные УЗ 1С RFC </h4>
     </div>
     <form id="form">
-        <input type="text" placeholder="ID пользователя" id="1с_id">
-        <button id="order">Поиск</button>
+        <input type="text" placeholder="Имя пользователя" id="1с_user_name">
+        <input type="password" placeholder="Пароль" id="1с_password">
+        <button id="order">Войти</button>
     </form>
+    <p>*если доступ к ИС 1С не был предоставлен, верификация в системе невозможна</p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
@@ -94,10 +96,12 @@
 
 
         order.addEventListener("click", () => {
-            let id = document.getElementById("1с_id").value;
+            let name = document.getElementById("1с_user_name").value;
+            let password = document.getElementById("1с_password").value;
 
             let auth_1c = {
-                id: id,
+                name: name,
+                password: password,
             }
 
             tg.sendData(JSON.stringify(auth_1c));
