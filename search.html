@@ -79,11 +79,10 @@
 <body>
     <div id="main">
         <h1>Поиск пользователя в <p>RFC Informer Bot</h1>
-        <h4>Для продолжения работы необходимо ввести имя или id </h4>
+        <h4>Для продолжения работы необходимо ввести id пользователя</h4>
     </div>
     <form id="form">
-        <input type="text" placeholder="Имя пользователя" id="1с_user_name">
-        <input type="password" placeholder="ID пользователя" id="1с_id">
+        <input type="text" placeholder="ID пользователя" id="1с_id">
         <button id="order">Поиск</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -95,11 +94,9 @@
 
 
         order.addEventListener("click", () => {
-            let name = document.getElementById("1с_user_name").value;
             let id = document.getElementById("1с_id").value;
 
             let auth_1c = {
-                name: name,
                 id: id,
             }
 
