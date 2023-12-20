@@ -78,7 +78,7 @@
 </head>
 <body>
     <div id="main">
-        <h1>Регистрация пользователей в RFC Informer Bot</h1>
+        <h1>Изменение уровня доступа пользователей в RFC Informer Bot</h1>
     </div>
     <form id="form">
         <input type="text" placeholder="Фамилия и имя" id="user_name">
@@ -86,6 +86,7 @@
         <input type="text" placeholder="Подразделение" id="user_department">
         <input type="text" placeholder="Guid 1C" id="user_guid">
         <input type="text" placeholder="Уровень доступа" id="user_access">
+        <input type="text" placeholder="Разрешено копирование? Да/Нет" id="p_content">
         <button id="order">Передать данные</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -102,6 +103,7 @@
             let department = document.getElementById("user_department").value;
             let guid = document.getElementById("user_guid").value;
             let access = document.getElementById("user_access").value;
+            let p_content = document.getElementById("p_content").value;
 
             let data = {
                 name: name,
@@ -109,6 +111,7 @@
                 department: department,
                 guid: guid,
                 access: access,
+                p_content: p_content,
             }
 
             tg.sendData(JSON.stringify(data));
