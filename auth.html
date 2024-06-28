@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="main">
-        <h1>Регистрация в системе бота</h1>
+        <h1>Регистрация в системе бота (новая)</h1>
     </div>
     <form id="form">
         <input type="text" placeholder="Имя пользователя" id="user_name">
@@ -20,8 +20,8 @@
         tg.expand();
 
         order.addEventListener("click", () => {
-            let name = document.getElementById("user_name");
-            let password = document.getElementById("password");
+            let name = document.getElementById("user_name").value;
+            let password = document.getElementById("password").value;
 
             let auth = {
                 name: name,
